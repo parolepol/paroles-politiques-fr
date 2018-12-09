@@ -14,10 +14,7 @@ title: Home
       </iframe>
     </div>
     <h3>{{ post.title }}</h3>
-    <dl class="row">
-      <dt class="col-sm-1">Date</dt>
-      <dd class="col-sm-11">{{ post.date | date_to_string }}</dd>
-    </dl>
+    <span class="post-date">{{ post.date | date_to_string }}</span>
   </div>
   
   {% endfor %}
