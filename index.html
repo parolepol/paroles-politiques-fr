@@ -8,10 +8,23 @@ title: Home
   
   <div class="video">
     <div class="video-wrapper">
+      
+      {% if post.source == "dailymotion" %}
+
+      <iframe width="480" height="270" 
+        src="{{ post.videourl }}"
+        frameborder="0" allow="autoplay" allowfullscreen>
+      </iframe>
+
+      {% else %}
+
       <iframe width="560" height="349"
         src="{{ post.videourl }}"
         frameborder="0" allowfullscreen>
       </iframe>
+
+      {% endif %}
+
     </div>
     <h3>{{ post.title }}</h3>
     <span class="post-date">{{ post.date | date_to_string }}</span>

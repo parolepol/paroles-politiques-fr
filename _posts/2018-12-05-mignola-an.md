@@ -1,5 +1,6 @@
 ---
 layout: video
-title: Intervention de Patrick Mignola, président du groupe Mouvement Démocrate et apparentés à l'Assemblée nationale
+source: youtube
 videourl: https://www.youtube.com/embed/cgf77haUghM?start=4178&modestbranding=1
+title: Intervention de Patrick Mignola, président du groupe Mouvement Démocrate et apparentés à l'Assemblée nationale
 ---
