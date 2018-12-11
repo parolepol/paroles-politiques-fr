@@ -6,11 +6,11 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            Paroles Politiques
+title:            'Paroles Politiques'
 tagline:          ''
 description:      'Tous les discours sans aucun filtre'
 url:              ''
-baseurl:          /
+baseurl:          /paroles-politiques-fr
 
 author:
   name:           'Paroles Politiques'
