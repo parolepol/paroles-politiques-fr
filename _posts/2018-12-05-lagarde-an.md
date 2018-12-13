@@ -1,6 +1,6 @@
 ---
 layout: video
 source: youtube
-videourl: https://www.youtube.com/embed/cgf77haUghM?start=5077&modestbranding=1
-title: Intervention de Jean-Christophe Lagarde, président du groupe UDI, Agir et Indépendants à l'Assemblée nationale
+videourl: https://www.youtube-nocookie.com/embed/cgf77haUghM?start=5077
+title: Intervention du Président du groupe UDI, Agir et Indépendants Jean-Christophe Lagarde à l'Assemblée nationale
 ---
