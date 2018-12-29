@@ -28,10 +28,12 @@
 
   </div>
   <h3>{{ include.post.title }}</h3>
-  {% for tag in include.post.tags %}
-    <a href="{{ site.baseurl }}/tags/{{ tag }}" class="badge badge-pill badge-primary">
-      {{ tag }}
-    </a>
-  {% endfor %}
+  <div>
+    {% for tag in include.post.tags %}
+      <a href="{{ site.baseurl }}/tags/{{ tag }}" class="badge badge-pill badge-primary">
+        {{ tag }}
+      </a>
+    {% endfor %}
+  </div>
   <span class="post-date">{{ include.post.date | date_to_string }}</span>
 </div>
