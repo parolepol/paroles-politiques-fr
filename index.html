@@ -5,45 +5,7 @@ title: Home
 
 <div class="posts">
   {% for post in paginator.posts %}
-
-  <div class="video">
-    <div class="video-wrapper">
-
-      {% if post.source == "dailymotion" %}
-
-      <iframe width="480" height="270"
-        src="{{ post.videourl }}"
-        frameborder="0" allow="autoplay" allowfullscreen>
-      </iframe>
-
-      {% elsif post.source == "youtube" %}
-
-      <iframe width="560" height="349"
-        src="{{ post.videourl }}"
-        frameborder="0" allowfullscreen>
-      </iframe>
-
-      {% elsif post.source == "facebook" %}
-
-      <iframe width="267" height="789"
-        src="{{ post.videourl }}"
-        frameborder="0" style="border:none;overflow:hidden"
-        scrolling="no" allowTransparency="true"
-        allow="encrypted-media" allowFullScreen="true">
-      </iframe>
-
-      {% endif %}
-
-    </div>
-    <h3>{{ post.title }}</h3>
-    {% for tag in post.tags %}
-      <a href="{{ site.baseurl }}/tags/{{ tag }}" class="badge badge-pill badge-primary">
-        {{ tag }}
-      </a>
-    {% endfor %}
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-  </div>
-
+    {% include post.html post=post %}
   {% endfor %}
 </div>
 
