@@ -8,15 +8,16 @@
   <p> <span class="lead">Sujets</span><br>
     {% capture temptags %}
       {% for tag in site.tags %}
-        {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
+        {{ tag[1].size | plus: 1000 }}${{ tag[0] }}${{ tag[1].size }}
       {% endfor %}
     {% endcapture %}
     {% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
     {% for temptag in sortedtemptags %}
-      {% assign tagitems = temptag | split: '#' %}
+      {% assign tagitems = temptag | split: '$' %}
       {% capture tagname %}{{ tagitems[1] }}{% endcapture %}
-      <a href="{{ site.baseurl }}/tags/{{ tagname }}" class="badge badge-pill badge-primary">
-        {{ tagname }}
+      {%- assign tag_url = tagname | downcase | remove: "#" -%}
+      <a href="{{ site.baseurl }}/tags/{{ tag_url }}" class="badge badge-pill badge-primary">
+        {{- tagname -}}
       </a>
     {% endfor %}
   </p>
