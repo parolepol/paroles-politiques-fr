@@ -9,19 +9,27 @@ title: Home
   {% endfor %}
 </div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
+<div class="pagination-container">
+  <nav class="pagination-nav" aria-label="Navigation">
+    <ul class="pagination">
+      <li class="page-item{% unless paginator.previous_page %} disabled{% endunless %}">
+        <a class="page-link" href="{{ site.baseurl }}/{% if paginator.page > 2 %}page{{paginator.previous_page}}{% endif %}" aria-label="Plus récent">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Plus récent</span>
+        </a>
+      </li>
+      <li class="page-item {% unless paginator.previous_page %} active{% endunless %}"><a class="page-link" href="{{ site.baseurl }}/">1</a></li>
+
+    {% for i in (2..paginator.total_pages) %}
+      <li class="page-item{% if paginator.page == i %} active{% endif %}"><a class="page-link" href="{{ site.baseurl }}/page{{ i }}">{{ i }}</a></li>
+    {% endfor %}
+
+      <li class="page-item{% unless paginator.next_page %} disabled{% endunless %}">
+        <a class="page-link" href="{{ site.baseurl }}/page{{paginator.next_page}}" aria-label="Plus ancien">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Plus ancien</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>

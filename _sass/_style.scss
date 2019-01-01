@@ -24,3 +24,9 @@
   position: sticky;
   top: 4rem;
 }
+
+div.pagination-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
