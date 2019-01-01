@@ -27,7 +27,13 @@
     {% endif %}
 
   </div>
-  <h3>{{ include.post.title }}</h3>
+
+  <h3>{{ include.post.title }}
+    {% if include.post.clickable%}
+      <small><a href="{{ site.baseurl }}{{ include.post.url }}" class="text-muted">verbatim</a></small>
+    {% endif %}
+  </h3>
+
   <div>
     {% for tag in include.post.tags %}
       {%- assign tag_url = tag | downcase | remove: "#" -%}
