@@ -13,34 +13,36 @@ layout: default
 <span class="post-date">{{ page.date | date_to_string }}</span>
 
 <div class="video">
-  <div class="video-wrapper">
+  {% if page.source == "dailymotion" %}
 
-    {% if page.source == "dailymotion" %}
-
+  <div class="video-container dailymotion">
     <iframe width="480" height="270"
       src="{{ page.videourl }}"
       frameborder="0" allow="autoplay" allowfullscreen>
     </iframe>
+  </div>
 
-    {% elsif page.source == "youtube" %}
+  {% elsif page.source == "youtube" %}
 
+  <div class="video-container youtube">
     <iframe width="560" height="349"
       src="{{ page.videourl }}"
       frameborder="0" allowfullscreen>
     </iframe>
+  </div>
 
-    {% elsif page.source == "facebook" %}
+  {% elsif page.source == "facebook" %}
 
-    <iframe width="267" height="789"
+  <div class="video-container facebook">
+    <iframe width="{{ page.width }}" height="{{ page.height }}"
       src="{{ page.videourl }}"
       frameborder="0" style="border:none;overflow:hidden"
       scrolling="no" allowTransparency="true"
       allow="encrypted-media" allowFullScreen="true">
     </iframe>
-
-    {% endif %}
-
   </div>
+
+  {% endif %}
 </div>
 
 <blockquote class="blockquote">
