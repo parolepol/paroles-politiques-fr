@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<h1><span class="badge badge-pill badge-primary">{{ page.tag }}</span></h1>
+
+<div class="posts">
+  {% for post in site.tags[page.tag] %}
+    {% include post.html post=post %}
+  {% endfor %}
+</div>

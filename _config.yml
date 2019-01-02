@@ -6,17 +6,17 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            'Paroles Politiques'
+title:            Paroles Politiques
 tagline:          ''
-description:      'Tous les discours sans aucun filtre'
+description:      Discours bruts
 url:              ''
 baseurl:          /paroles-politiques-fr
 
 author:
-  name:           'Paroles Politiques'
+  name:           Paroles Politiques
   url:            ''
 
-paginate:         5
+paginate:         3
 
 plugins:
   - jekyll-paginate

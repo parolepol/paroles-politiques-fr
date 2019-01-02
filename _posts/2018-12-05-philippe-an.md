@@ -1,6 +1,12 @@
 ---
 layout: video
 source: youtube
-videourl: https://www.youtube-nocookie.com/embed/cgf77haUghM?start=81
+videourl: https://www.youtube-nocookie.com/embed/cgf77haUghM?modestbranding=1&start=83
 title: Déclaration du Gouvernement sur la fiscalité écologique et ses conséquences sur le pouvoir d'achat à l'Assemblée nationale
+tags:
+  - "@EPhilippePM"
+  - "#PM"
+  - "@gouvernementFR"
+  - "@AssembleeNat"
+  - "#GiletsJaunes"
 ---

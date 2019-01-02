@@ -1,0 +1,46 @@
+<div class="video">
+  <div class="video-wrapper">
+
+    {% if include.post.source == "dailymotion" %}
+
+    <iframe width="480" height="270"
+      src="{{ include.post.videourl }}"
+      frameborder="0" allow="autoplay" allowfullscreen>
+    </iframe>
+
+    {% elsif include.post.source == "youtube" %}
+
+    <iframe width="560" height="349"
+      src="{{ include.post.videourl }}"
+      frameborder="0" allowfullscreen>
+    </iframe>
+
+    {% elsif include.post.source == "facebook" %}
+
+    <iframe width="267" height="789"
+      src="{{ include.post.videourl }}"
+      frameborder="0" style="border:none;overflow:hidden"
+      scrolling="no" allowTransparency="true"
+      allow="encrypted-media" allowFullScreen="true">
+    </iframe>
+
+    {% endif %}
+
+  </div>
+
+  <h3>{{ include.post.title }}
+    {% if include.post.clickable%}
+      <small><a href="{{ site.baseurl }}{{ include.post.url }}" class="text-muted">verbatim</a></small>
+    {% endif %}
+  </h3>
+
+  <div>
+    {% for tag in include.post.tags %}
+      {%- assign tag_url = tag | downcase | remove: "#" -%}
+      <a href="{{ site.baseurl }}/tags/{{ tag_url }}" class="badge badge-pill badge-primary">
+        {{- tag -}}
+      </a>
+    {% endfor %}
+  </div>
+  <span class="post-date">{{ include.post.date | date_to_string }}</span>
+</div>
