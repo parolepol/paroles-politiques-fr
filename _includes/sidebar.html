@@ -4,7 +4,7 @@
   </a></h1>
 
   <h2 class="text-muted subtitle">{{ site.description }}</h2>
-  
+
   <p><span class="lead">Sujets</span><br>
     {% capture temptags %}
       {% for tag in site.tags %}
@@ -15,10 +15,7 @@
     {% for temptag in sortedtemptags %}
       {% assign tagitems = temptag | split: '$' %}
       {% capture tagname %}{{ tagitems[1] }}{% endcapture %}
-      {%- assign tag_url = tagname | downcase | remove: "#" -%}
-      <a href="{{ site.baseurl }}/tags/{{ tag_url }}" class="badge badge-pill badge-primary">
-        {{- tagname -}}
-      </a>
+      {% include tag.html name=tagname %}
     {% endfor %}
   </p>
 
@@ -38,6 +35,8 @@
       <a href="{{ site.baseurl }}/tags/{{ tag_url }}" class="badge badge-pill badge-primary">
         {{- tagname -}}
       </a>
+
+
     {% endfor %}
   </p>
 

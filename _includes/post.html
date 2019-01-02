@@ -36,13 +36,10 @@
 
   <div>
     {% for tag in include.post.tags %}
-      {%- assign tag_url = tag | downcase | remove: "#" -%}
-      <a href="{{ site.baseurl }}/tags/{{ tag_url }}" class="badge badge-pill badge-primary">
-        {{- tag -}}
-      </a>
+      {% include tag.html name=tag %}
     {% endfor %}
   </div>
 
-  <span class="post-date">{% include date-fr.html date=include.post.date %}</span>
+  <span class="post-date">{% include date-fr date=include.post.date %}</span>
 
 </div>

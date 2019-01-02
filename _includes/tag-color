@@ -1,0 +1,3 @@
+{%- assign n_colors = site.data.tags.colors | size -%}
+{%- assign i = include.tag_name | size | modulo: n_colors -%}
+{{ site.data.tags.colors[i] }}
