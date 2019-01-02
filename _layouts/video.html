@@ -4,10 +4,7 @@ layout: default
 
 <h2>
   {% for tag in page.tags %}
-    {%- assign tag_url = tag | downcase | remove: "#" -%}
-    <a href="{{ site.baseurl }}/tags/{{ tag_url }}" class="badge badge-pill badge-primary">
-      {{- tag -}}
-    </a>
+    {% include tag.html name=tag %}
   {% endfor %}
 </h2>
 
