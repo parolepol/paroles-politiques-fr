@@ -1,11 +1,11 @@
 <div class="sidebar">
-  <h1><a href="{{ site.baseurl }}/">
-    {{ site.title }}
+  <h1 class="side-title"><a href="{{ site.baseurl }}/">
+    {{- site.title -}}
   </a></h1>
 
-  <p class="lead">{{ site.description }}</p>
-
-  <p> <span class="lead">Sujets</span><br>
+  <h2 class="text-muted subtitle">{{ site.description }}</h2>
+  
+  <p><span class="lead">Sujets</span><br>
     {% capture temptags %}
       {% for tag in site.tags %}
         {{ tag[1].size | plus: 1000 }}${{ tag[0] }}${{ tag[1].size }}
@@ -23,6 +23,24 @@
   </p>
 
   {% comment %}
+
+  <p><span class="lead">Par date</span><br>
+    {% capture temptags %}
+      {% for tag in site.tags %}
+        {{ tag[1].size | plus: 1000 }}${{ tag[0] }}${{ tag[1].size }}
+      {% endfor %}
+    {% endcapture %}
+    {% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
+    {% for temptag in sortedtemptags %}
+      {% assign tagitems = temptag | split: '$' %}
+      {% capture tagname %}{{ tagitems[1] }}{% endcapture %}
+      {%- assign tag_url = tagname | downcase | remove: "#" -%}
+      <a href="{{ site.baseurl }}/tags/{{ tag_url }}" class="badge badge-pill badge-primary">
+        {{- tagname -}}
+      </a>
+    {% endfor %}
+  </p>
+
   <ul class="list-group">
     <a href="{{ site.baseurl }}/"
        class="list-group-item list-group-item-action {% if page.url == site.baseurl + "/"  %}active{% endif %}">
@@ -42,9 +60,12 @@
   </ul>
   {% endcomment %}
 
+  {% include pagination-links.html %}
+
   <p class="small">
     &copy; {{ site.time | date: '%Y' }}. Tous droits réservés.
-    <a href="#">Mentions légales</a>
-    <a href="#">Autre truc légal</a>
+    {%- comment -%}
+    <a href="#" class="small-link">Mentions légales</a>
+    {%- endcomment -%}
   </p>
 </div>

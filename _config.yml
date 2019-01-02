@@ -8,7 +8,7 @@ permalink:        pretty
 # Setup
 title:            Paroles Politiques
 tagline:          ''
-description:      Discours sans filtres
+description:      Discours bruts
 url:              ''
 baseurl:          /paroles-politiques-fr
 
@@ -16,7 +16,7 @@ author:
   name:           Paroles Politiques
   url:            ''
 
-paginate:         5
+paginate:         3
 
 plugins:
   - jekyll-paginate

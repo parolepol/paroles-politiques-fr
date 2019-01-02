@@ -1,3 +1,18 @@
+h1.side-title a {
+  font-family: monospace;
+  font-weight: bold;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h2.text-muted.subtitle {
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
 .video {
   width: 100%;
   padding: 1em 0;
@@ -29,4 +44,8 @@ div.pagination-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.small-link {
+  display: inline-block;
 }
