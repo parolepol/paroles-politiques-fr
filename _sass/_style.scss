@@ -1,8 +1,18 @@
+main {
+  margin: 24px 0 72px;
+}
+
+.sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding-top: 48px;
+}
+
 h1.side-title a {
   font-family: monospace;
   font-weight: bold;
   color: inherit;
-
   &:hover {
     text-decoration: none;
   }
@@ -15,7 +25,7 @@ h2.text-muted.subtitle {
 
 .video {
   width: 100%;
-  padding: 1em 0;
+  padding: 0 0 3em;
 }
 
 .video-container.facebook {
@@ -44,27 +54,9 @@ h2.text-muted.subtitle {
     height: 100%;
 }
 
-// .video-wrapper iframe.facebook-iframe {
-//   position:
-//   width: 267px;
-//   margin: auto;
-//   height: 100%;
-// }
-
-// .facebook-container {
-//   margin: auto;
-// }
-
 .facebook-container iframe {
   margin: auto;
   width: 267px;
-}
-
-
-.sidebar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 4rem;
 }
 
 div.pagination-container {

@@ -3,8 +3,6 @@ layout: default
 ---
 <h1><span class="badge badge-pill badge-primary" style="background-color: {% include tag-color tag_name=page.tag %}">{{ page.tag }}</span></h1>
 
-<div class="posts">
-  {% for post in site.tags[page.tag] %}
-    {% include post.html post=post %}
-  {% endfor %}
-</div>
+{% for post in site.tags[page.tag] %}
+  {% include post.html post=post %}
+{% endfor %}

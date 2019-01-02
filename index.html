@@ -2,11 +2,8 @@
 layout: default
 title: Home
 ---
-
-<div class="posts">
-  {% for post in paginator.posts %}
-    {% include post.html post=post %}
-  {% endfor %}
-</div>
+{% for post in paginator.posts %}
+  {% include post.html post=post %}
+{% endfor %}
 
 {% include pagination-links.html class="pagination-container" %}
