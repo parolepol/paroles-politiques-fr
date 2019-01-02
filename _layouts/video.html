@@ -10,39 +10,10 @@ layout: default
 
 <h3>{{ page.title }}</h3>
 
-<span class="post-date">{{ page.date | date_to_string }}</span>
+<span class="post-date">{% include date-fr date=page.date %}</span>
 
 <div class="video">
-  {% if page.source == "dailymotion" %}
-
-  <div class="video-container dailymotion">
-    <iframe width="480" height="270"
-      src="{{ page.videourl }}"
-      frameborder="0" allow="autoplay" allowfullscreen>
-    </iframe>
-  </div>
-
-  {% elsif page.source == "youtube" %}
-
-  <div class="video-container youtube">
-    <iframe width="560" height="349"
-      src="{{ page.videourl }}"
-      frameborder="0" allowfullscreen>
-    </iframe>
-  </div>
-
-  {% elsif page.source == "facebook" %}
-
-  <div class="video-container facebook">
-    <iframe width="{{ page.width }}" height="{{ page.height }}"
-      src="{{ page.videourl }}"
-      frameborder="0" style="border:none;overflow:hidden"
-      scrolling="no" allowTransparency="true"
-      allow="encrypted-media" allowFullScreen="true">
-    </iframe>
-  </div>
-
-  {% endif %}
+  {% include video.html video=page %}
 </div>
 
 <blockquote class="blockquote">

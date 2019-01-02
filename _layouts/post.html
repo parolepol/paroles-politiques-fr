@@ -16,71 +16,10 @@ layout: default
 </div>
 
 <div class="video">
-  {% if include.post.source == "dailymotion" %}
-
-  <div class="video-container dailymotion">
-    <iframe width="480" height="270"
-      src="{{ include.post.videourl }}"
-      frameborder="0" allow="autoplay" allowfullscreen>
-    </iframe>
-  </div>
-
-  {% elsif include.post.source == "youtube" %}
-
-  <div class="video-container youtube">
-    <iframe width="560" height="349"
-      src="{{ include.post.videourl }}"
-      frameborder="0" allowfullscreen>
-    </iframe>
-  </div>
-
-  {% elsif include.post.source == "facebook" %}
-
-  <div class="video-container facebook">
-    <iframe width="{{ include.post.width }}" height="{{ include.post.height }}"
-      src="{{ include.post.videourl }}"
-      frameborder="0" style="border:none;overflow:hidden"
-      scrolling="no" allowTransparency="true"
-      allow="encrypted-media" allowFullScreen="true">
-    </iframe>
-  </div>
-
-  {% endif %}
-</div>
-
-<div class="video">
-  <div class="video-wrapper">
-
-    {% if include.post.source == "dailymotion" %}
-
-    <iframe width="480" height="270"
-      src="{{ include.post.videourl }}"
-      frameborder="0" allow="autoplay" allowfullscreen>
-    </iframe>
-
-    {% elsif include.post.source == "youtube" %}
-
-    <iframe width="560" height="349"
-      src="{{ include.post.videourl }}"
-      frameborder="0" allowfullscreen>
-    </iframe>
-
-    {% elsif include.post.source == "facebook" %}
-
-    <iframe width="267" height="789"
-      src="{{ include.post.videourl }}"
-      frameborder="0" style="border:none;overflow:hidden"
-      scrolling="no" allowTransparency="true"
-      allow="encrypted-media" allowFullScreen="true">
-    </iframe>
-
-    {% endif %}
-
-  </div>
+  {% include video.html video=include.post %}
 </div>
 
 {{ content }}
-
 
 <div class="related">
   <h2>Related Posts</h2>
