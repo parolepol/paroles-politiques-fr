@@ -42,5 +42,7 @@
       </a>
     {% endfor %}
   </div>
-  <span class="post-date">{{ include.post.date | date_to_string }}</span>
+
+  <span class="post-date">{% include date-fr.html date=include.post.date %}</span>
+
 </div>
