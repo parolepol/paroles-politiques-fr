@@ -1,8 +1,25 @@
+# colors:
+#   - red
+#   - green
+#   - blue
+#   - orange
+#   - cyan
+#   - purple
+#   - magenta
+
 colors:
-  - red
-  - green
-  - blue
-  - orange
-  - cyan
-  - purple
-  - magenta
+  - "#FF5252"
+  - "#FF4081"
+  - "#E040FB"
+  - "#7C4DFF"
+  - "#536DFE"
+  - "#448AFF"
+  - "#0091EA"
+  - "#0097A7"
+  - "#009688"
+  - "#43A047"
+  - "#558B2F"
+  - "#827717"
+  - "#E65100"
+  - "#FF3D00"
+  - "#A1887F"
