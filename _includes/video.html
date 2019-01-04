@@ -20,4 +20,8 @@
       allow="encrypted-media" allowFullScreen="true">
     </iframe>
   </div>
+{% elsif include.video.source == "twitter" %}
+  <div class="video-container twitter">
+    {{ include.video.tweet }}
+  </div>
 {% endif %}
