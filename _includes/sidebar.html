@@ -1,7 +1,7 @@
 <div class="sidebar">
   <h1 class="side-title"><a href="{{ site.baseurl }}/">
-      Parole<br>
-      <span class="text-primary">#Politique</span>
+    Parole<br>
+    <span class="text-primary">#Politique</span>
   </a></h1>
 
   <h2 class="text-muted subtitle">{{ site.description }}</h2>
@@ -17,47 +17,34 @@
     </footer>
   </blockquote>
 
-  <p><span class="lead">Personnalités</span><br>
+
+  <h5>Personnalités</h5>
+  <p>
     {% for figure in site.data.tags.figures %}
       {% assign tag = figure[0] %}
       {% include tag.html name=tag %}
     {% endfor %}
   </p>
 
-  <p><span class="lead">Partis, groupes, etc.</span><br>
-    {% capture temptags %}
-      {% for tag in site.tags %}
-        {{ tag[1].size | plus: 1000 }}${{ tag[0] }}${{ tag[1].size }}
-      {% endfor %}
-    {% endcapture %}
-    {% assign sortedtemptags = temptags | split:' ' | sort | reverse %}
-    {% for temptag in sortedtemptags %}
-      {% assign tagitems = temptag | split: '$' %}
-      {% capture tagname %}{{ tagitems[1] }}{% endcapture %}
-      {% include tag.html name=tagname %}
+  <h5>Partis et groupes</h5>
+  <p>
+    {% for group in site.data.tags.groups %}
+      {% assign tag = group[0] %}
+      {% include tag.html name=tag %}
     {% endfor %}
   </p>
 
-  {% comment %}
-
-  <ul class="list-group">
-    <a href="{{ site.baseurl }}/"
-       class="list-group-item list-group-item-action {% if page.url == site.baseurl + "/"  %}active{% endif %}">
-      Accueil
-    </a>
-    {% assign pages_list = site.pages %}
-    {% for node in pages_list %}
-      {% if node.title != null %}
-        {% if node.layout == "page" %}
-          <a href="{{ site.baseurl }}{{ node.url }}"
-             class="list-group-item list-group-item-action {% if page.url == node.url %}active{% endif %}">
-            {{ node.title }}
-          </a>
-        {% endif %}
+  <h5>Autres sujets</h5>
+  <p>
+    {% for tag in site.tags %}
+      {% assign tagname = tag[0] %}
+      {% if site.data.tags.figures[tagname] %}
+      {% elsif site.data.tags.groups[tagname] %}
+      {% else %}
+        {% include tag.html name=tagname %}
       {% endif %}
     {% endfor %}
-  </ul>
-  {% endcomment %}
+  </p>
 
   {% include pagination-links.html %}
 

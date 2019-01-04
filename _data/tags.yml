@@ -50,29 +50,31 @@ figures:
 # Add groups and parties to this list, and give them a color
 # They key is a twitter hashtag or name (including # or @ char)
 groups:
-  "@modem":
-    color: "#F09300"
-  "@AssembleeNat":
-    color: "#039BE5"
-  "@Elysee":
-    color: "#039BE5"
-  "@partisocialiste":
-    color: "#D81B60"
-  "@GroupeModem":
-    color: "#F09300"
   "@FranceInsoumise":
     color: "#D50000"
+  "@partisocialiste":
+    color: "#D81B60"
+  "@modem":
+    color: "#F09300"
+  "@GroupeModem":
+    color: "#F09300"
   "@UDI_off":
+    color: "#8E24AA"
+  "@DeputesUDIAGIR":
     color: "#8E24AA"
   "@Republicains_An":
     color: "#4285F4"
   "@RNational_off":
     color: "#3F51B5"
-  "@DeputesUDIAGIR":
-    color: "#8E24AA"
 
-other_tag_colors:
-  "#GiletJaunes":
+# Not all tags need to be listed here. Add a tag if you want to fix its color
+# They key is a twitter hashtag or name (including # or @ char)
+other_tags:
+  "@AssembleeNat":
+    color: "#039BE5"
+  "@Elysee":
+    color: "#039BE5"
+  "#GiletsJaunes":
     color: "#C0CA33"
   "#Climat":
     color: "#7CB342"
