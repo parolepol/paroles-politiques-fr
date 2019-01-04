@@ -7,6 +7,6 @@ tags:
   - "@EPhilippePM"
   - "@AssembleeNat"
   - "#GiletsJaunes"
-  - "@Matigon"
+  - "@Matignon"
   - "@gouvernementFR"
 ---
