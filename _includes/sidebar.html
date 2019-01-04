@@ -1,11 +1,30 @@
 <div class="sidebar">
   <h1 class="side-title"><a href="{{ site.baseurl }}/">
-    {{- site.title -}}
+      Parole<br>
+      <span class="text-primary">#Politique</span>
   </a></h1>
 
   <h2 class="text-muted subtitle">{{ site.description }}</h2>
 
-  <p><span class="lead">Sujets</span><br>
+  <blockquote class="blockquote small-quote">
+    <p class="mb-0">L'homme supérieur sait les discours de ses adversaires et
+      ses adversaires ne savent pas les siens.
+    </p>
+    <footer class="blockquote-footer">Henri Boucher,
+      <cite title="Les pensées, maximes et réflexions">Les pensées, maximes et
+        réflexions
+      </cite>
+    </footer>
+  </blockquote>
+
+  <p><span class="lead">Personnalités</span><br>
+    {% for figure in site.data.tags.figures %}
+      {% assign tag = figure[0] %}
+      {% include tag.html name=tag %}
+    {% endfor %}
+  </p>
+
+  <p><span class="lead">Partis, groupes, etc.</span><br>
     {% capture temptags %}
       {% for tag in site.tags %}
         {{ tag[1].size | plus: 1000 }}${{ tag[0] }}${{ tag[1].size }}

@@ -6,7 +6,7 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            "Parole_s #Politique"
+title:            "Parole #Politique"
 tagline:          ''
 description:      Discours bruts
 url:              ''
@@ -16,7 +16,7 @@ author:
   name:           Paroles Politiques
   url:            ''
 
-paginate:         3
+paginate:         10
 
 plugins:
   - jekyll-paginate

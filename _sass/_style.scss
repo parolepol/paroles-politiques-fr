@@ -69,10 +69,18 @@ div.pagination-container {
   display: inline-block;
 }
 
-.color-sample {
+.sample {
   display: inline-block;
+  margin: 8px;
+}
+
+.color-sample {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  margin: 2px
+  margin: auto;
+}
+
+.small-quote  {
+  font-size: 100%;
 }
