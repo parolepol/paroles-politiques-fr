@@ -6,14 +6,14 @@ highlighter:      pygments
 permalink:        pretty
 
 # Setup
-title:            "Parole #Politique"
+title:            Parole Politique
 tagline:          ''
 description:      Discours bruts
 url:              ''
 baseurl:          /paroles-politiques-fr
 
 author:
-  name:           Paroles Politiques
+  name:           "@ParolePol"
   url:            ''
 
 paginate:         10
