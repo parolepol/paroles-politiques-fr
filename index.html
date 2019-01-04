@@ -2,59 +2,8 @@
 layout: default
 title: Home
 ---
+{% for post in paginator.posts %}
+  {% include post.html post=post %}
+{% endfor %}
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  
-  <div class="video">
-    <div class="video-wrapper">
-      
-      {% if post.source == "dailymotion" %}
-
-      <iframe width="480" height="270" 
-        src="{{ post.videourl }}"
-        frameborder="0" allow="autoplay" allowfullscreen>
-      </iframe>
-
-      {% elsif post.source == "youtube" %}
-
-      <iframe width="560" height="349"
-        src="{{ post.videourl }}"
-        frameborder="0" allowfullscreen>
-      </iframe>
-
-      {% elsif post.source == "facebook" %}
-
-      <iframe width="267" height="789"
-        src="{{ post.videourl }}"
-        frameborder="0" style="border:none;overflow:hidden" 
-        scrolling="no" allowTransparency="true" 
-        allow="encrypted-media" allowFullScreen="true">
-      </iframe>
-
-      {% endif %}
-
-    </div>
-    <h3>{{ post.title }}</h3>
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-  </div>
-  
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+{% include pagination-links.html class="pagination-container" %}
